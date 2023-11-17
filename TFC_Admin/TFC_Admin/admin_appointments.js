@@ -44,7 +44,7 @@ async function displayAppointments() {
           <td>${apointmentData.status}</td>
               <td>
                   <a href="admin_appointments.html?id=${doc.id}" class="btn remove-btn" data-patient-id="${doc.id}"><i class="fas fa-trash"></i> Remove</a>
-                  <a href="admin_appointmentsView.html?id=${doc.id}" class="btn"><i class="fas fa-eye"></i> View</a>
+                  <a href="admin_appointmentView.html?id=${doc.id}" class="btn"><i class="fas fa-eye"></i> View</a>
               </td>
           `;
 
