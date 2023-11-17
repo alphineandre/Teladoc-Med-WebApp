@@ -147,7 +147,7 @@ const logoutLink = document.getElementById("logout");
   }
 
   async function updateTotalCounts() {
-    const doctorsRef = collection(db, "doctors");
+    const doctorsRef = collection(db, "healthcare_providers");
     const patientsRef = collection(db, "patients");
 
     try {
