@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+*{font-family: 'Roboto', sans-serif;}
+
+
+button{cursor:pointer;}
+
+internetConection{position:fixed; z-index:100;
+	top:0; left:0; right:0; bottom:0; display: flex;
+	justify-content: center; align-items: center;
+	color:#666; font-weight:100;
+	background:rgba(255,255,255,0.75); padding:15px;
+	text-align:left; font-size:35px;
+   backdrop-filter: blur(15px);
+}
+internetConection off{color:red; display:none;}
+internetConection on{color:green; display:none;}
+internetConection span{font-size:75px !important;}
+
+.global{max-width:900px; display:block;
+	margin:auto; position:relative; text-align:center; padding:10px;}
+
+
+
+.sticky{box-shadow:0px 5px 20px rgba(0,0,0,0.25); padding:10px 0 5px 0;}
+.sticky counter .box {padding:5px; width:25%; text-align:right;}
+.sticky counter .box b {display:none;}
+.sticky counter .box span {display:none;}
+.sticky counter .box value {font-size:25px; 
+position:relative; 
+padding:0px;}
+.sticky counter .box value::before {content:"Schedule"; 
+position:absolute; top:-10px; 
+left:0; 
+background:#ccc; 
+font-size:8px; 
+adding:2px 8px; 
+width:50%; 
+border-radius:5px; 
+text-transform:uppercase;}
+.sticky counter .ok value::before{content:"Confirmed";}
+.sticky counter .canceled value::before{content:"Canceled";}
+.sticky performance{
+	display:inline-block; 
+width:60%; font-size: 12px; 
+height:20px; 
+line-height:20px; 
+margin-bottom:0; 
+position:relative;
+}
+.sticky performance Bar, .
+sticky performance status {
+	height:20px; 
+line-height:20px;
+}
+.sticky actionLine{
+	display:inline-block; 
+width:auto; padding:0; 
+line-height:20px; 
+margin-bottom:0; 
+position:relative; 
+top:-7px;
+}
+.sticky actionLine button{ 
+font-size: 10px
+;}
+
+counter{
+	margin-bottom:10px;
+	display:block; 
+	width:100%;
+	}
+.box{
+	padding:10px 0;
+	display:inline-block; 
+	text-align:center; 
+	background: #ececec; 
+	width:30%; 
+	font-weight:300;  
+	border-radius:10px; 
+	font-size:15px;
+	transition: all 0.3s ease;
+	}
+.box b{
+	display:block;
+	transition: all 0.3s ease;
+	}
+.box value{f
+ont-size:50px; 
+display:block; 
+padding:5px; 
+font-weight:400;
+transition: all 0.3s ease;
+}
+.ok value{c
+olor:green;
+}
+.canceled value{
+	color:red;
+	}
+
+performance{
+	border:1px solid #ccc; 
+	padding:0px; 
+	display:block; 
+	border-radius:30px; 
+	text-align:left; 
+	overflow:hidden; 
+	position:relative; 
+	height:30px; 
+	margin-bottom:10px; 
+	transition: all 0.3s ease;
+	}
+performance Bar{
+	height:30px;
+	padding:0 10px 0 0;
+	position:absolute;
+	border-radius:15px; 
+	text-align: right;
+	line-height:30px;
+	}
+performance .ok{
+	background:rgba(0,255,50,0.85);
+	z-index: 1;
+	color:green;
+	}
+performance .canceled{
+	background:rgba(255,0,0,0.50);
+	z-index:2; 
+	color:rgba(255,50,0,0.90);
+	}
+performance status{
+	display:block; 
+	position: relative; 
+	text-align:right; 
+	line-height:30px; 
+	padding:0 15px; 
+	z-index:3; 
+	text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+	}
+
+actionLine{
+	display:block; 
+	text-align: right;
+	margin-bottom:10px;
+	}
+actionLine button, filter button{
+	border:none; 
+	border-radius:5px;
+	background:#ccc; 
+	padding:5px 10px;
+	}
+
+filter{
+	display:none;
+	background:#ececec; 
+	padding:5px 0; 
+	width:90%; 
+	margin: 0 auto 10px auto;
+	border-radius: 10px;
+	}
+filter #lineFilter{
+	width:80%; 
+	border:0; 
+	border-bottom: 1px solid #666;
+	background:none; 
+	line-height:15px; 
+	font-size12px; 
+	}
+
+lineNavigator{
+	position:fixed;
+	display:block;
+	z-index:20; 
+	top:10px; 
+	right:0; 
+	background:#ececec; 
+	padding:10px;
+border-radius: 5px 0 0 5px;
+}
+lineNavigator day, lineNavigator top{
+	display:block; 
+	padding:15px 5px;
+	background:#666;
+	border-radius:5px; 
+	margin-bottom: 5px;
+	color:#fff; c
+	ursor:pointer;
+	}
+lineNavigator day:last-child{
+	margin-bottom:0;
+	}
+lineNavigator day sup{
+	font-size:10px; 
+	font-weight:200;
+	}
+
+line{
+	padding:10px; 
+	background:#ececec; 
+	display:block; 
+	border-radius:10px; 
+	margin-right:60px;
+	}
+
+line obj{
+	display:block; 
+	padding:5px;
+	text-align:left;
+	}
+line obj:nth-child(even){
+	background:rgba(255,255,255,0.5);
+	border-radius:5px;
+	}
+
+line obj O_pos{
+	background:#ccc;
+	display:inline-block;
+	padding:10px; 
+	margin-right:5px; 
+	width:5%; text-align:center;
+	border-radius:5px;
+	}
+line obj O_Name{
+	min-width:45%; 
+	display:inline-block;
+	}
+line obj O_time{
+	width:15%;
+	display:inline-block;
+	text-align:center;
+	justify-content: center; 
+	align-items: center; 
+	display:none;
+	margin-right:10px;
+	}
+
+line obj O_CD{
+	width:15%;
+	display:inline-block;
+	text-align:center;
+	margin-top:5px;
+	}
+line obj O_CD::before{
+	ontent:"Forecast";
+	font-size:8px; 
+	display:block;
+	background:#ccc;
+	border-radius:5px;
+	max-width:50px;
+	margin:auto;}
+line obj O_CD hour {
+	font-weight:400;
+	}
+line obj O_CD min {
+	font-weight:100;
+	}
+line obj O_CD sec {
+	font-size:10px; 
+	margin-left:5px;
+	}
+
+line obj O_Act{
+	float:right; 
+height:100%; 
+margin-top:5px;
+}
+line obj O_Act button{
+	border:none;
+	border-radius:5px;
+	background:#ccc; 
+	padding:5px 7px; 
+	margin-left:5px; 
+	width:30px; 
+	height:30px;
+	}
+line obj O_Act button span{
+	position:absolute; 
+	margin:-7px 0 0 -7px;
+	}
+line obj O_Act button.btnStart{
+	background:green; 
+	color:#fff; display:none;
+	}
+line obj O_Act button.btnExclude{
+	background:red; 
+	color:#fff;
+	}
+
+line :not(obj.brake):nth-child(n):nth-child(-n+6) O_Act button.btnStart{display:inline-block;}
+
+/*Range of clients that can be started
+line obj:nth-child(n):nth-child(-n+6) O_Act button.btnStart{display:inline-block;}
+*/
+
+line obj.break{
+	text-align:center; 
+	background:#666; 
+	color:#fff; 
+	border-radius:5px;
+	margin:5px 0;
+	}
+
+clientPanel{
+	display:block;
+	margin:240px 60px 30px 0px;
+	padding:10px; 
+	border: 1px solid #ccc; 
+	border-radius: 10px;}
+clientPanel h2{
+	background:#fff;
+	display:block; 
+	margin: -25px auto 0 auto;
+	width:180px;
+	}
+clientPanel obj {
+	text-align:left;
+	display:block; 
+	overflow:hidden;
+	padding:10px 10px;
+	border-radius:5px;
+	}
+clientPanel obj:nth-child(even){
+	background:#ececec;
+	}
+clientPanel obj clientName{
+	width:50%; 
+	display:inline-block;
+	font-weight:700;
+	}
+clientPanel obj startTime{
+	width:20%; 
+	display:inline-block;
+	text-align:center;
+	margin-right:10px; 
+	display:none;
+	}
+clientPanel obj timeCounter{
+	width:20%; 
+	background: linear-gradient(180deg,#c9c8bc,hsla(0,0%,100%,0)),#e4e3d6; box-shadow: inset 0 4px 4px rgb(0 0 0 / 25%);
+	border-radius: 5px;
+	height: 100%; 
+	display: inline-block; 
+	justify-content: center; 
+	align-items: center;
+	padding:8px 4px; 
+	text-align:center;
+	}
+clientPanel obj timeCounter::before{
+	content:"Duration"; 
+	font-size:8px; 
+	display:block; 
+	background:#ccc; 
+	border-radius:5px; 
+	max-width:50px; 
+	margin:-13px auto;
+	position:absolute;
+	padding:2px 5px;
+	}
+clientPanel obj timeCounter hour {
+	font-weight:400;
+	}
+clientPanel obj timeCounter min {
+	font-weight:100
+	;}
+clientPanel obj timeCounter sec {
+	font-size:10px;
+	margin-left:10px;
+	}
+clientPanel obj O_Act {
+	margin-left:5px;
+	}
+clientPanel obj O_Act button{
+	border:none; 
+	border-radius:5px; 
+	background:#ccc; 
+	height:100%; 
+	display:inline-block; 
+	justify-content: center; 
+	align-items: center; 
+	text-align:center;
+	width:30px;
+	height:30px; 
+	position:absolute; 
+	argin-top:5px;
+	}
+clientPanel obj O_Act button span{
+	position:absolute;
+	margin: -7px 0 0 -7px;
+	}
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="images/logo.JPEG">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+         
+    <title>Admin Login</title> 
+</head>
+<body>
+    
+  <div class="container">
+      <div class="forms">
+          <div class="form login">
+              <span class="title">Admin Login</span>
+
+              <form onsubmit="adminLogin(event)">
+                  <div class="input-field">
+                      <input type="email" id= "email" placeholder="Enter your email" required>
+                       <i class="uil uil-user"></i>
+                  </div>
+                  <div class="input-field">
+                      <input type="password" id="password" class="password" placeholder="Enter your password" required>
+                      <i class="uil uil-lock icon"></i>
+                      <i class="uil uil-eye-slash showHidePw" onclick="togglePasswordVisibility(this)"></i>
+                  </div>
+
+
+                  <div class="checkbox-text">
+                      
+                      
+                      <a href="forgetpass.html" class="text">Forgot password?</a>
+                  </div>
+
+                  <div class="input-field button"  >
+                      <input type="submit" name="LoginSubmit"  value="Login" >
+        </div>
+        
+      </form>
+
+              <div class="login-signup">
+                  <span class="text">Not a member?
+                      <a href="adminRegister.html" class="text signup-link">Signup Now</a>
+                  </span>
+              </div>
+              <div class="login-signup">
+                <span class="text">Back To Login Dashboard?
+                    <a href="http://localhost/TelaDoc/logindash/logindash.html" class="text signup-link">Login Dashboard</a>
+                </span>
+            </div>
+          </div>
+  </div>
+</div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+ <script src="adminLogin.js" type="module"></script>
+</body>
+<script>
+    function togglePasswordVisibility(element) {
+        const passwordField = document.getElementById('password');
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            element.classList.remove('uil-eye-slash');
+            element.classList.add('uil-eye');
+        } else {
+            passwordField.type = 'password';
+            element.classList.remove('uil-eye');
+            element.classList.add('uil-eye-slash');
+        }
+    }
+</script>
+</html>

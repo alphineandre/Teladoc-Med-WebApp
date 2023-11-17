@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Admin - View Appointment</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="admindash.html" class="logo">
+									<span class="symbol"><img src="images/logo.JPEG" alt="" /></span><span class="title">TELADOC</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+					
+							
+							<li id="user-username"></li>
+							<li><a href="admindash.html">Dashboard</a></li>
+							<li><a href="admin_patients.html">Patients</a></li>
+							<li><a href="admin_doctors.html">Healthcare Provider</a></li>
+							<li><a href="admin_appointments.html">Appointments</a></li>
+							<li><a href="admin_update.html">Admin Profile</a></li>
+							<li><a href="#" id="logout">Logout</a></li>
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							
+								<h1 align="center">View Appointment
+								</h1>
+								  <style>
+								  h1 {
+							  border: 5px solid #FD49A0;
+							  background: #FFFFFF;
+							}
+								  </style>
+							
+								
+                            <div class="inner"  align= "center">	
+                                <!-- Updating user details -->
+                            
+                                <form id="updatePatient-form">
+                                    <div class="form-container">
+                                      <h1 style="color: aqua;">Appointment Details</h1>
+                                  
+                                      <label for="view_name" class="form-label">Patient Name:</label>
+                                      <input type="text" id="view_name" name="view_name" class="form-input" readonly><br/>
+                                  
+                                      <label for="view_phoneNumber" class="form-label">Patient CellNo:</label>
+                                      <input type="tel" id="view_phoneNumber" name="view_phoneNumber" class="form-input" readonly><br/>
+                                  
+                                      <label for="view_appointmentDate" class="form-label">Appointment Date:</label>
+                                      <input type="text" id="view_appointmentDate" name="view_appointmentDate" class="form-input" readonly><br/>
+                                  
+                                      <label for="view_docName" class="form-label">Healthcare Provider Name:</label>
+                                      <input type="text" id="view_docName" name="view_docName" class="form-input" rows="3" readonly></input>
+                            
+                                      <label for="view_docSpeciality" class="form-label">Healthcare Provider Speciality:</label>
+                                      <input type="text" id="view_docSpeciality" name="view_docSpeciality" class="form-input" rows="3" readonly></input>
+                                  
+                                      <label for="view_symptoms" class="form-label">Symptoms:</label>
+                                      <input type="text" id="view_symptoms" name="view_symptoms" class="form-input" rows="3" readonly></input>
+                            
+                                      <label for="view_appointmentType" class="form-label">Appointment Type:</label>
+                                      <input type="text" id="view_appointmentType" name="view_appointmentType" class="form-input" rows="3" readonly></input>
+                                    
+                                      <label for="view_status" class="form-label">Status:</label>
+                                      <input type="text" id="view_status" name="view_status" class="form-input" rows="3" readonly></input>
+                                    </div>
+                                  </form>
+                            
+                                  <br/>
+                                  <p>Contact the patient about the appointment:</p>
+                                  <a href="#" id="phoneIcon"><i class="fas fa-phone">Call</i> </a><br/><br/>
+                            
+                                 
+                            </div>
+                            
+                            </div>
+                            
+                            <style>
+                            form {
+                            font-family: sans-serif;
+                            }
+                            
+                            .form-container {
+                            width: 500px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            border: 1px solid purple;
+                            }
+                            
+                            .form-label {
+                            display: block;
+                            margin-bottom: 5px;
+                            }
+                            
+                            .form-input {
+                            width: 100%;
+                            padding: 5px;
+                            border: 1px solid aqua;
+                            }
+                            
+                            .form-button {
+                            padding: 10px;
+                            background-color: purple;
+                            color: white;
+                            border: none;
+                            cursor: pointer;
+                            }
+                            </style>
+                              
+                              
+					
+                </div></b>
+				<style>
+    .pagination {
+        margin-top: 20px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    .pagination a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 5px 10px;
+        background-color: #FD49A0;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .pagination a:hover {
+        background-color: #338BA8;
+    }
+
+    .pagination a.active {
+        background-color: #338BA8;
+        color: #fff;
+    }
+</style>
+
+					</div>		
+								
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; TelaDoc. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+	<script src= "admin_appointmentView.js" type="module"></script>
+</html>

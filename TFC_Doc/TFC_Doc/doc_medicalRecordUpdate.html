@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="images/logo.JPEG">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="docstyle.css" />
+  <title>HC Provider - Update Medical Record</title>
+  
+  <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="stylesheet" href="assets/css/addroc.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+  
+  
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="css2/opensans-font.css">
+    <link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+    <!-- Main Style Css -->
+  
+     <script src="js2/jquery-3.3.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div class="container">
+    <div class="navigation">
+      <ul>
+       
+         <li id="user-username"></li>
+        <li><a href="docdash.html">
+          <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+          <span class="title">Dashboard</span>
+            </a>
+         </li>
+        <li><a href="doc_patients.html">
+          <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+          <span class="title">Patients</span>
+            </a>
+         </li>
+         <li><a href="medical_records.html">
+          <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+          <span class="title">Medical Records</span>
+            </a>
+         </li>
+        <li><a href="doc_appointments.html">
+          <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+          <span class="title">Appointments</span>
+            </a>
+         </li>
+        <li><a href="doc_profile.html">
+          <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+          <span class="title">Profile</span>
+            </a>
+         </li>
+        <li><a href="" id="logout"> 
+          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+          <span class="title">Logout</span>
+            </a>
+         </li>
+      </ul>
+    </div>
+ 
+   
+  </div>
+
+ <!--   main -->
+ <div class="main">
+  <div class="topbar">
+<!--       menu button -->
+<div class="toggle">
+  <ion-icon name="menu-outline"></ion-icon>
+</div>
+ <!--       search -->
+
+</div>
+ <!--     user https://learnwebcode.github.io/json-example/images/cat-1.jpg-->
+
+<br/>
+
+<style>
+    
+    /* For desktops and tablets */
+    @media (min-width: 768px) {
+      form {
+        font-family: sans-serif;
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border: 5px solid pink;
+        border-radius: 10px;
+      }
+    
+      h1 {
+        color: #FD49A0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .row {
+        display: flex;
+        margin-bottom: 10px;
+      }
+    
+      .col {
+        flex: 1;
+        margin-right: 10px;
+      }
+    
+      .form-input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    
+      .form-button {
+        font-size: 16px;
+        padding: 10px;
+        background-color: purple;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 0 auto;
+      }
+      input::placeholder {
+      font-weight: 400;
+    }
+    }
+    
+    /* For smaller screens */
+    @media (max-width: 767px) {
+      form {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border: 5px solid pink;
+        border-radius: 10px;
+      }
+    
+      h1 {
+        color: #FD49A0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .row {
+        display: block;
+        margin-bottom: 10px;
+      }
+    
+      .col {
+        flex: 1;
+        margin: 0;
+      }
+    
+      .form-input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    
+      .form-button {
+        font-size: 16px;
+        padding: 10px;
+        background-color: purple;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        
+        
+      }
+      input::placeholder {
+      font-weight: 400;
+    }
+  
+    }
+        </style>
+      </head>
+     
+      <form id="UpdateMedicalRecord-form">
+        
+          <h1 style="color: aqua; text-align: center;">Update Medical Record</h1>
+    
+          <div class="row">
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="DoctorName" class="form-control" placeholder="Doctor Name" readonly>
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="doctor_speciality" class="form-control" placeholder="Doctor Speciality" readonly>
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="col">
+                <select  name="patient" id="patient" class="form-select" >
+               
+            </div><br/>
+            
+          </div><br/>
+
+      
+          
+          <div class="row">
+            <div class="col">
+              <input style="font-weight: bold;" type="number"  id="update_age" class="form-control" placeholder="Age">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_Physical_Address" class="form-control" placeholder="Physical Address">
+            </div>
+          </div><br/>
+
+          <div class="row">
+           
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_Martial_Status" class="form-control" placeholder="Martial Status">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_Appointment_Date" class="form-control" placeholder="Appointment Date">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_Appointment_Type" class="form-control" placeholder="Appointment Type">
+            </div>
+          </div><br/>
+
+          <div class="row">
+          
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_Symptoms" class="form-control" placeholder="Any symptoms">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_condtion" class="form-control" placeholder="Health Condition">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_diagnosis" class="form-control" placeholder="Diagnosis">
+            </div>
+          </div><br/>
+
+          <div class="row">
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_prescription" class="form-control" placeholder="Prescription">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_treatmentPlan" class="form-control" placeholder="Treament Plan">
+            </div>
+          </div><br/>
+      
+          
+          <div class="row">
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_testResults" class="form-control" placeholder="Test Results">
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_vitalSigns" class="form-control" placeholder="Vital Signs">
+            </div>  <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_allergies" class="form-control" placeholder="Allergies">
+            </div>
+          </div><br/>
+
+          <div class="row">
+            <div class="col">
+              <textarea  type="text"  id="update_followUpInstructions" class="form-control" placeholder="Follow-Up Instructions"></textarea>
+            </div>
+            <div class="col">
+              <input style="font-weight: bold;" type="text"  id="update_nextAppointment" class="form-control" placeholder="Next Appointment">
+            </div>
+            <div class="col">
+              <textarea type="text"  id="update_notes" class="form-control" placeholder="Notes"></textarea>
+            </div>
+          </div><br/>
+      
+          <button  type="submit" class="form-button" onmouseover="this.style.backgroundColor='#00FFFF'" onmouseout="this.style.backgroundColor='purple'">Save</button>
+    
+      </form>
+
+
+<!--      cards over. in cardBox -->
+</div>
+<!--   main -->
+  
+  
+
+		
+			
+			
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		
+	
+				
+
+  
+
+ <script>
+   // MenuToggle
+   let toggle = document.querySelector('.toggle');
+   let navigation = document.querySelector('.navigation');
+   let main = document.querySelector('.main');
+   
+   toggle.onclick = function(){
+     
+     navigation.classList.toggle('active');
+     main.classList.toggle('active');
+     // console.log('click');
+   }
+ // add hovered class in selected div list item
+   let list = document.querySelectorAll('.navigation li');
+   function activeLink(){
+     list.forEach((item)=>item.classList.remove('hovered'));
+     this.classList.add('hovered');
+      }
+    list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink)) ;  
+ </script>
+  
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+<script src= "doc_medicalRecordUpdate.js" type="module"></script>
+</html>

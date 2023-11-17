@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="images/logo.JPEG">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="docstyle.css" />
+  <title>HC Provider - Appointments</title>
+</head>
+<body>
+ <div class="container">
+   <div class="navigation">
+     <ul>
+      
+        <li id="user-username"></li>
+       <li><a href="docdash.html">
+         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+         <span class="title">Dashboard</span>
+           </a>
+        </li>
+       <li><a href="doc_patients.html">
+         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+         <span class="title">Patients</span>
+           </a>
+        </li>
+       <li><a href="medical_records.html">
+         <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+         <span class="title">Medical Records</span>
+           </a>
+        </li>
+       <li><a href="doc_appointments.html">
+         <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+         <span class="title">Appointments</span>
+           </a>
+        </li>
+       <li><a href="doc_profile.html">
+         <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+         <span class="title">Profile</span>
+           </a>
+        </li>
+       <li><a href="" id="logout"> 
+         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+         <span class="title">Logout</span>
+           </a>
+        </li>
+     </ul>
+   </div>
+
+   <style>
+    .navigation li a[href="doc_appointments.html"] {
+  background-color: #FD49A0;
+  color: white;
+}
+
+   </style>
+ </div>
+<!--   main -->
+  <div class="main">
+    <div class="topbar">
+<!--       menu button -->
+        <div class="toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+         <!--       search -->
+        
+         <!--     user https://learnwebcode.github.io/json-example/images/cat-1.jpg-->
+        <div class="user">
+        <img src="images/pro.png">
+        </div>
+      </div>
+    <!--   cards -->
+  
+<!-- Appointments  details list -->
+<h1 align="center">All Appointments</h1><br><br><br>
+<div class="inner"  align= "center">	
+     <style>
+      h1 {
+    border: 5px solid #FD49A0;
+    background: #FFFFFF;
+  }
+      </style>
+  
+    
+  <div class="patient-display">
+    <table class="patient-display-table">
+      
+      <thead>
+        <tr bgcolor="#FD49A0">
+          <td>Patient Name</td>
+          <td>Patient CellNo</td>
+          <td>Appointment Date</td>
+          <td>Doctor Name</td>
+          <td>Doctor Speciality</td>
+          <td>Symptoms</td>
+          <td>Appointment Type</td>
+          <td>Status</td>
+          <td>Action</td>
+         
+        </tr>
+      </thead>
+      
+    
+      <tbody id="Appointment-list">
+
+      </tbody>
+            
+  </table>
+
+ <b><div  align="right"class="pagination">
+        
+    </div></b>
+    </div>
+  
+  
+  
+  
+
+ <script>
+   // MenuToggle
+   let toggle = document.querySelector('.toggle');
+   let navigation = document.querySelector('.navigation');
+   let main = document.querySelector('.main');
+   
+   toggle.onclick = function(){
+     
+     navigation.classList.toggle('active');
+     main.classList.toggle('active');
+     // console.log('click');
+   }
+ // add hovered class in selected div list item
+   let list = document.querySelectorAll('.navigation li');
+   function activeLink(){
+     list.forEach((item)=>item.classList.remove('hovered'));
+     this.classList.add('hovered');
+      }
+    list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink)) ;  
+ </script>
+  
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+<script src= "doc_appointments.js" type="module"></script>
+</html>

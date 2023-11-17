@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+
+<html>
+<link rel="icon" href="images/logo.JPEG">
+	<head>
+		<title>Admin - Update HC Provider</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="stylesheet" href="assets/css/addroc.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+  
+  
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.JPEG" alt="" /></span><span class="title">TELADOC</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+					
+							
+							<li id="user-username"></li>
+							<li><a href="admindash.html">Dashboard</a></li>
+							<li><a href="admin_patients.html">Patients</a></li>
+							<li><a href="admin_doctors.html">Healthcare Provider</a></li>
+							<li><a href="admin_appointments.html">Appointments</a></li>
+							<li><a href="admin_update.html">Admin Profile</a></li>
+							<li><a href="#" id="logout">Logout</a></li>
+							
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner" >
+							<h1 align="center">Update HC Provider Profile</h1></div>
+							<style>
+							    h1 {
+								border: 5px solid #FD49A0;
+								background: white;
+									}
+							</style>
+						<div class="inner"  align= "center">	
+							<!-- Updating user details -->
+					
+                            <form id="updateDoctor-form">
+                                <div class="form-container">
+                                  <h1 style="color: aqua;">Update HC Provider Details</h1>
+                              
+                                  <label for="edit_name" class="form-label">Fullname:</label>
+                                  <input type="text" id="edit_name" name="edit_name" class="form-input"  required><br/>
+                              
+                                  <label for="edit_username" class="form-label">Username:</label>
+                                  <input type="text" id="edit_username" name="edit_username" class="form-input" required><br/>
+                              
+                                  <label for="edit_email" class="form-label">Email:</label>
+                                  <input type="email" id="edit_email" name="edit_email" class="form-input" readonly><br/>
+                              
+                                  <label for="edit_phoneNumber" class="form-label">Phone Number:</label>
+                                  <input type="tel" id="edit_phoneNumber" name="edit_phoneNumber" class="form-input" required></input>
+
+                                  <label for="edit_location" class="form-label">Location:</label>
+                                  <input type="text" id="edit_location" name="edit_location" class="form-input" required></input>
+
+                                  <label for="edit_speciality" class="form-label">Speciality:</label>
+                                  <input type="text" id="edit_speciality" name="edit_speciality" class="form-input" required></input>
+
+                                  <label for="edit_availability" class="form-label">Availability:</label>
+                                  <input type="text" id="edit_availability" name="edit_availability" class="form-input" required></input>
+                              
+                                  <br/>
+                                  <button type="submit" class="form-button" onmouseover="this.style.backgroundColor='#00FFFF'" onmouseout="this.style.backgroundColor='purple'">Update</button>
+                                </div>
+                              </form>
+					</div>
+				
+				</div>
+
+                <style>
+                    form {
+                      font-family: sans-serif;
+                    }
+                
+                    .form-container {
+                      width: 500px;
+                      margin: 0 auto;
+                      padding: 20px;
+                      border: 1px solid purple;
+                    }
+                
+                    .form-label {
+                      display: block;
+                      margin-bottom: 5px;
+                    }
+                
+                    .form-input {
+                      width: 100%;
+                      padding: 5px;
+                      border: 1px solid aqua;
+                    }
+                
+                    .form-button {
+                      padding: 10px;
+                      background-color: purple;
+                      color: white;
+                      border: none;
+                      cursor: pointer;
+                    }
+                  </style>
+				
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+<li>&copy; TelaDoc. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+			
+			
+						</div>
+					</div>
+
+		<!-- Scripts -->
+        
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+	
+	</body>
+	<script src= "admin_doctorsUpdate.js" type="module"></script>
+</html>
+						

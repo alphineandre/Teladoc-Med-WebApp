@@ -1,0 +1,163 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #1FFDFC;
+  background-color: #F604F9; /* Set the background color of the body to #F604F9 */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 190px;
+  height: 254px;
+  background-image: linear-gradient(144deg, #F604F9, #1FFDFC 60%, #bd6fda);
+  border: none;
+  border-radius: 10px;
+  padding-top: 10px;
+  position: relative;
+  font-family: inherit;
+}
+
+.card span {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 1.3em;
+}
+
+.card .job {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1em;
+}
+
+.card .img {
+width: 70px;
+  height: 70px; /* Set the image height to 100% */
+  background: #e8e8e8;
+  border-radius: 100%; /* Make the image fit within the border-radius */
+  display: flex;
+   margin: auto;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide any part of the image that exceeds the border-radius */
+}
+
+
+.card button {
+  padding: 8px 25px;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  margin-top: 30px;
+  background: #e8e8e8;
+  color: #111111;
+  font-weight: 600;
+}
+
+.card button:hover {
+  background: #212121;
+  color: #ffffff;
+}
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #1FFDFC;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #F604F9;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #F604F9;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.counts {
+  background: #1FFDFC;
+  padding: 70px 0 60px;
+}
+
+.counts .count-box {
+  padding: 30px 30px 25px 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: #fff;
+}
+
+.counts .count-box i {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  background: #F604F9;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+}
+
+.counts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #1FFDFC;
+}
+
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+}

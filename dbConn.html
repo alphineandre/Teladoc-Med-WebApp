@@ -1,0 +1,19 @@
+<?php
+// Generate the patient_id
+$patient_id = uniqid(); // or use any other method to generate the patient_id
+
+// Connect to the database
+$servername = "localhost";
+$dbuser = "root";
+$password = "";
+$dbname = "teladoc_app";
+
+$conn = mysqli_connect($servername, $dbuser, $password, $dbname);
+
+// Check the connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+?>

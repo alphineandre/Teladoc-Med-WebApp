@@ -1,0 +1,859 @@
+<!DOCTYPE HTML>
+
+<html>
+<link rel="icon" href="images/logo.JPEG">
+	<head>
+		<title>Create Medical Record</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="stylesheet" href="assets/css/addroc.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+  
+
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="css2/opensans-font.css">
+    <link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+    <!-- Main Style Css -->
+  
+     <script src="js2/jquery-3.3.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.JPEG" alt="" /></span><span class="title">TELADOC</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+					
+						
+							<li><a href="index.html">Home</a></li>
+							<li><a href="addappointment.html">Create Appointment</a></li>
+							<li><a href="addroc.html">Create Medical Record</a></li>
+							<li><a href="history.html">Medical History</a></li>
+							<li><a href="patientprofile.html">Profile</a></li>
+							<li><a href="logout.html">Logout</a></li>
+							
+							
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1 align="center">Create Medical Record</h1>
+								  <style>
+	  h1 {
+  border: 5px solid #FD49A0;
+  background: #338BA8;
+}
+	  </style>
+							<span class="image main"><img src="images/cr.jpg" alt="" style="width:800px; height:400px;" /></span>
+							</div>
+							
+
+<script>
+    jQuery(document).ready(function() {
+        var dictionary = {
+            "en": {
+                "login": "Login",
+                "FirstName": "First Name",
+                "lastname": "Last Name",
+                'brith': 'Birth Date:',
+                'day': 'Day',
+                'month': 'Month',
+                'year': 'Year',
+                'youraddress': 'Your Address',
+                'NearestAddressPoint': 'Nearest Address Point',
+                'phoneNumber': 'Phone Number',
+                'email': 'Your Email',
+                'Gender': 'Gender:',
+                'male': 'Male',
+                'female': 'Female',
+                'MaritalS': 'Marital Status:',
+                'Single': 'Single',
+                'Married': 'Married',
+                'Divorced': 'Divorced',
+                'city': 'City',
+                'workArea': 'Work Area',
+                'Section': 'Section',
+                'personalImg': 'Personal Image:',
+                'IDFace': 'ID Card Image Face:',
+                'IDBack': 'ID Card Image Back:',
+                'Related': 'Related Full Name',
+                'RelationD': 'Relation Degree',
+                'phoneNumber': 'Phone Number',
+                'blood-type': 'Blood Type:',
+                'surgery': 'Have You Made Any Surgery, If YES what is it',
+                'suffered': 'Have You Suffered From Any Of The Health Problems',
+                'drugs': 'Are You Taking Any Drugs Include Dose Also',
+                'PersonalInformation': 'Personal Information',
+                'AdditionalInformation': 'Additional Information',
+                'RelatedInformation1': 'Related Information 1',
+                'RelatedInformation2': 'Related Information 2',
+                'MedicalHistory': 'Medical History',
+                'MedicationHistory': 'Medication History',
+                'NearestAddressPointex': 'example: Moda Mall',
+                'youraddressx': 'example: Mosul/Al-Muthanna',
+                'Sectionx': 'example: Tech Team',
+                'workAreax': 'example: QAF Lab',
+                'cityx': 'example: Mosul',
+                'nextBtn': 'Next',
+                'prevBtn': 'Previous',
+                'relatedFullName':'Related Full Name',
+                'relationDegree':'example: Father"',
+                
+ 
+            },
+           
+
+
+        var set_lang = function(dictionary) {
+            document.getElementsByTagName("input").textAlign = "right";
+            $("[data-translate]").each(function() {
+
+                if ($(this).is("input")) {
+
+                    $(this).attr('placeholder', dictionary[$(this).data("translate")])
+                } else {
+                    $(this).text(dictionary[$(this).data("translate")])
+                }
+            })
+        };
+
+       
+
+        // Set initial language to English
+        set_lang(dictionary.en);
+
+
+    });
+</script>
+
+<style>
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+
+    /* Mark the active step: */
+    .step.active {
+        opacity: 1;
+    }
+
+    .tab {
+        padding-top: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        display: none;
+    }
+
+    .step.finish {
+        background-color: #4CAF50;
+    }
+</style>
+
+
+
+
+    <div class="page-content" ">
+
+        <div class="form-v1-content">
+
+            <div class="wizard-form">
+
+                <div>
+
+
+                    <div>
+                        <form id="regForm" style="margin-bottom:25px" class="form-register" enctype="multipart/form-data">
+                            <div id="form-total">
+                                <div class="steps clearfix">
+                                    <ul role="tablist">
+                                        <li role="tab" class='doar' aria-disabled="false" class="first current" aria-selected="true">
+										<a id="form-total-t-0" aria-controls="form-total-p-0"><span class="current-info audible"> </span>
+                                                <div class="title">
+                                                    <p class="step-icon"><span>01</span></p>
+                                                    <span class="step-text" data-translate="PersonalInformation" ass="lang" key="personal">Personal Information</span>
+                                                </div>
+                                            </a></li>
+                                        <li role="tab" class='doar' aria-disabled="false"><a id="form-total-t-1" aria-controls="form-total-p-1">
+                                                <div class="title">
+                                                    <p class="step-icon"><span>02</span></p>
+                                                    <span class="step-text" data-translate="AdditionalInformation">Additional Information</span>
+                                                </div>
+                                            </a></li>
+                                        <li role="tab" class='doar' aria-disabled="false"><a id="form-total-t-2" aria-controls="form-total-p-2">
+                                                <div class="title">
+                                                    <p class="step-icon"><span>03</span></p>
+                                                    <span class="step-text" data-translate="RelatedInformation1">Related Information 1</span>
+                                                </div>
+                                            </a></li>
+                                        <li role="tab" class='doar' aria-disabled="false"><a id="form-total-t-3" aria-controls="form-total-p-3">
+                                                <div class="title">
+                                                    <p class="step-icon"><span>04</span></p>
+                                                    <span class="step-text" data-translate="RelatedInformation2">Related Information 2</span>
+                                                </div>
+                                            </a></li>
+                                        <li role="tab" class='doar' aria-disabled="false"><a id="form-total-t-4" aria-controls="form-total-p-4">
+                                                <div class="title">
+                                                    <p class="step-icon"><span>05</span></p>
+                                                    <span class="step-text" data-translate="MedicalHistory">Medical History</span>
+                                                </div>
+                                            </a></li>
+                                        <li role="tab" class='doar' aria-disabled="false" class="last"><a id="form-total-t-5" aria-controls="form-total-p-5">
+                                                <div class="title">
+                                                    <p class="step-icon"><span>06</span></p>
+                                                    <span class="step-text" data-translate="MedicationHistory">Medication History</span>
+                                                </div>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                                <!-- SECTION 1 -->
+                                <select id="language" style="margin:0px 200px;">
+                                    <option value="en" selected>English</option>
+                                    
+                                </select>
+                                <div class="tab">
+                                     <section>
+
+                                        <div class="inner">
+                                             <div class="form-row">
+                                                <div class="form-holder">
+                                                    <fieldset>
+                                                        <legend class="lang" data-translate="FirstName">First Name</legend>
+                                                        <input type="text" data-translate="FirstName" class="form-control" id="first-name" name="first-name" placeholder="First Name" required>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="form-holder">
+                                                    <fieldset>
+                                                        <legend data-translate="lastname">Last Name</legend>
+                                                        <input data-translate="lastname" type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <label style="margin: 8px 10px;" data-translate="brith" class="special-label">Birth Date:</label>
+                                                    <div style="display:flex;margin:-10px">
+                                                        <div class="form-holder">
+                                                            <fieldset>
+                                                                <legend data-translate="day">Day</legend>
+                                                                <input type="number" class="form-control" id="dayy" name="dayy" placeholder="6" min="1" max="31" required>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="form-holder">
+                                                            <fieldset>
+                                                                <legend data-translate="month">Month</legend>
+                                                                <input type="number" class="form-control" id="monthh" name="monthh" placeholder="9" min="1" max="12" required>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="form-holder">
+                                                            <fieldset>
+                                                                <legend data-translate="year">Year</legend>
+                                                                <input type="number" class="form-control" id="yearr" name="yearr" placeholder="1991" min="1920" max="2020" required>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="youraddress">Your Address</legend>
+                                                        <input type="text" data-translate="youraddressx" name="your_address" id="your_address" class="form-control" placeholder="example: Mosul/Al-Muthanna" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="NearestAddressPoint">Nearest Address Point</legend>
+                                                        <input data-translate="NearestAddressPointex" type="text" class="form-control" id="nap" name="nap" placeholder="example: Moda Mall" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="phoneNumber">Phone Number</legend>
+                                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="+964 7xx xxx xxxx" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="email">Your Email</legend>
+                                                        <input type="email" name="your_email" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- SECTION 2 -->
+                                <div class="tab">
+                                    <!--<h2>-->
+                                    <!--    <p class="step-icon"><span>02</span></p>-->
+                                    <!--    <span class="step-text">Additional Information</span>-->
+                                    <!--</h2>-->
+                                    <section>
+                                        <div class="inner">
+                                            <!--<div class="wizard-header">-->
+                                            <!--    <h3 class="heading">Additional Information</h3>-->
+                                            <!--</div>-->
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <label data-translate="Gender" class="special-label">Gender:</label>
+                                                    <select name="genderr" id="gender">
+                                                        <option data-translate="Gender" value="gender" disabled selected>Gender</option>
+                                                        <option data-translate="male" value="Male">Male</option>
+                                                        <option data-translate="female" value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <label data-translate="MaritalS" class="special-label">Marital Status:</label>
+                                                    <select name="marital" id="marital">
+                                                        <option data-translate="MaritalS" value="marital" disabled selected>Marital Status</option>
+                                                        <option data-translate="Single" value="Single">Single </option>
+                                                        <option data-translate="Married" value="Married">Married</option>
+                                                        <option data-translate="Divorced" value="Divorced">Divorced</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="city">City</legend>
+                                                        <input type="text" class="form-control" data-translate="cityx" id="city" name="city" placeholder="example: Mosul" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="workArea">Work Area</legend>
+                                                        <input type="text" class="form-control" id="work-area" data-translate="workAreax" name="work-area" placeholder="example: QAF Lab" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="Section">Section</legend>
+                                                        <input type="text" class="form-control" data-translate="Sectionx" id="section" name="section" placeholder="example: Tech Team" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <label data-translate="personalImg" class="special-label" style="color:#666666;margin: 0 10px;">Personal Image:</label>
+                                                <fieldset style="border: 0px;margin-top: -5px;">
+                                                    <input style="margin-left: 10" type="file" onchange="fileScr(event,this.id)" class="form-control" name="picture" id="picture" required>
+                                                </fieldset>
+                                            </div>
+                                            <div class="form-row">
+                                                <label data-translate="IDFace" class="special-label" style="color:#666666;margin: 0 10px;">ID Card Image Face:</label>
+                                                <fieldset style="border: 0px;margin-top: -5px;">
+                                                    <input style="margin-left: 10" type="file" onchange="fileScr(event,this.id)" class="form-control" name="idPictureF" id="idPictureF" required>
+                                                </fieldset>
+                                            </div>
+                                            <div class="form-row">
+                                                <label data-translate="IDBack" class="special-label" style="color:#666666;margin: 0 10px;">ID Card Image Back:</label>
+                                                <fieldset style="border: 0px;margin-top: -5px;">
+                                                    <input style="margin-left: 10" type="file" onchange="fileScr(event,this.id)" class="form-control" name="idPictureB" id="idPictureB" required>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            function fileScr(event,id){
+                                             var reader = new FileReader();
+                                            reader.onload = function(){
+                                            if(id=="picture")
+                                            window.pi = reader.result;
+                                            else if(id=="idPictureF")
+                                            window.idf = reader.result;
+                                            else if(id=="idPictureB")
+                                            window.idb = reader.result;
+                                            // console.log(reader.result);
+                                            };
+                                            reader.readAsDataURL(event.target.files[0]);
+                                        }
+                                        </script>
+                                    </section>
+                                </div>
+                                <!-- SECTION 3 -->
+                                <div class="tab">
+                                    <!--<h2>-->
+                                    <!--    <p class="step-icon"><span>03</span></p>-->
+                                    <!--    <span class="step-text">Related Information 1</span>-->
+                                    <!--</h2>-->
+                                    <section>
+                                        <div class="inner">
+                                            <!--<div class="wizard-header">-->
+                                            <!--    <h3 class="heading">First Related Person Information</h3>-->
+                                            <!--    <p>Please Fill The Required Information </p>-->
+                                            <!--</div>-->
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="Related">Related Full Name</legend>
+                                                        <input type="text" data-translate="relatedFullName" class="form-control" id="relatedFullName1" name="relatedFullName1" placeholder="Related Full Name" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="RelationD">Relation Degree</legend>
+                                                        <input type="text" data-translate="relationDegree" name="relationDegree1" id="relationDegree1" class="form-control" placeholder="example: Father" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="phoneNumber">Phone Number</legend>
+                                                        <input type="text" data-translate="relatedPhone" class="form-control" id="relatedPhone1" name="relatedPhone1" placeholder="+964 7xx xxx xxxx" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- SECTION 4 -->
+                                <div class="tab">
+                                    <!--<h2>-->
+                                    <!--    <p class="step-icon"><span>04</span></p>-->
+                                    <!--    <span class="step-text">Related Information 2</span>-->
+                                    <!--</h2>-->
+                                    <section>
+                                        <div class="inner">
+                                            <!--<div class="wizard-header">-->
+                                            <!--    <h3 class="heading">Second Related Person Information</h3>-->
+                                            <!--    <p>Please Fill The Required Information </p>-->
+                                            <!--</div>-->
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="Related">Related Full Name</legend>
+                                                        <input type="text" data-translate="relatedFullName" class="form-control" id="relatedFullName2" name="relatedFullName2" placeholder="Related Full Name" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="RelationD">Relation Degree</legend>
+                                                        <input type="text" data-translate="relationDegree" name="relationDegree2" id="relationDegree2" class="form-control" placeholder="example: Father" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset>
+                                                        <legend data-translate="phoneNumber">Phone Number</legend>
+                                                        <input type="text" data-translate="relatedPhone" class="form-control" id="relatedPhone2" name="relatedPhone2" placeholder="+964 7xx xxx xxxx" required>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- SECTION 5 -->
+                                <div class="tab">
+                                    <!--<h2>-->
+                                    <!--    <p class="step-icon"><span>05</span></p>-->
+                                    <!--    <span class="step-text">Medical History</span>-->
+                                    <!--</h2>-->
+                                    <section>
+                                        <div class="inner">
+                                            <!--<div class="wizard-header">-->
+                                            <!--    <h3 class="heading">Medical History</h3>-->
+                                            <!--    <p>Please Fill The Required Information</p>-->
+                                            <!--</div>-->
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <label style="width: 300px;margin: 0px 98px;" data-translate="blood-type" class="special-label">Blood Type:</label>
+                                                    <select style="width: 300px;margin: 0px 98px;" name="blood" id="blood">
+                                                        <option value="ABO+-" disabled selected>ABO+-</option>
+                                                        <option value="A+">A+</option>
+                                                        <option value="A-">A-</option>
+                                                        <option value="B+">B+</option>
+                                                        <option value="B-">B-</option>
+                                                        <option value="AB+">AB+</option>
+                                                        <option value="AB-">AB-</option>
+                                                        <option value="O+">O+</option>
+                                                        <option value="O-">O-</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset style="width: 300px;margin: 0px 98px;">
+                                                        <legend data-translate="surgery">Have You Made Any Surgery, If YES what is it</legend>
+                                                        <textarea class="form-control" type="text" style="height: 180px;border: 0ch;padding-top: 9px;width: 300px;" cols="60" rows="5" name="surgery" id="surgery" placeholder="Yes, in my stomach....." required></textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset style="margin: 0 98px;width:300px">
+                                                        <legend data-translate="suffered">Have You Suffered From Any Of The Health Problems</legend>
+                                                        <textarea type="text" class="form-control" style="height: 180px;border: 0ch;padding-top: 9px;width:300px;" cols="60" rows="5" id="problems" name="problems" placeholder="Heart problems, Blood pressure ,....." required></textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- SECTION 6 -->
+                                <div class="tab">
+                                    <!--<h2>-->
+                                    <!--    <p class="step-icon"><span>06</span></p>-->
+                                    <!--    <span class="step-text">Medication History</span>-->
+                                    <!--</h2>-->
+                                    <section>
+                                        <div class="inner">
+                                            <!--<div class="wizard-header">-->
+                                            <!--    <h3 class="heading">Medication History</h3>-->
+                                            <!--    <p>Please Fill The Required Information</p>-->
+                                            <!--</div>-->
+                                            <div class="form-row">
+                                                <div class="form-holder form-holder-2">
+                                                    <fieldset style="width: 300px;margin: 0 98px;">
+                                                        <legend data-translate="drugs">Are You Taking Any Drugs Include Dose Also</legend>
+                                                        <textarea type="text" style="height: 180px;border: 0ch; padding-top: 9px;
+                                          width: 300px;" cols="60" rows="5" name="drug" id="drug" placeholder="Paracetamol - 5 per day ,another one - every 7 hours, etc......." required></textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div style="overflow:auto;">
+                                <div style="text-align:center">
+                                    <input type="submit" style="outline:none;background-color:#4fab40;font-size:20px;color:#FFF;font-family:inherit;width:120px;height:60px;border-radius:28px;box-shadow: 2px 9px 7px 0px rgba(0,0,0,0.25);border:0px;margin-bottom:25px;display:none" id="submit"> 
+                                    <button type="button" style="outline:none;background-color:#4fab40;font-size:20px;color:#FFF;font-family:inherit;width:120px;height:60px;border-radius:28px;box-shadow: 2px 9px 7px 0px rgba(0,0,0,0.25);border:0px;margin-bottom:25px" id="nextBtn" data-translate="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button type="button" style="outline:none;background-color:red;font-size:20px;color:#FFF;font-family:inherit;width:120px;height:60px;border-radius:28px;box-shadow: 2px 9px 7px 0px rgba(0,0,0,0.25);border:0px;margin-bottom:25px" id="prevBtn" data-translate="prevBtn"  onclick="nextPrev(-1)">Previous</button>
+                                </div>
+                            </div>
+                            <!-- Circles which indicates the steps of the form: -->
+                            <div style="display:none;text-align:center;margin-top:40px;">
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <!--<span class="step"></span>-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--<script src="js/jquery-3.3.1.min.js"></script>-->
+            <!--<script src="js/jquery.steps.js"></script>-->
+            <!--<script src="js/main.js"></script>-->
+            <script>
+            
+$("#regForm").submit(function(e) {
+var pi = window.pi;
+var idf = window.idf;
+var idb = window.idb;
+var first_name = $('#first-name').val();
+var last_name = $('#last-name').val();
+var dayy = $('#dayy').val();
+var monthh = $('#monthh').val();
+var yearr = $('#yearr').val();
+var your_address = $('#your_address').val();
+var nap = $('#nap').val();
+var phone = $('#phone').val();
+var your_email = $('#your_email').val();
+var gender = $('#gender').val();
+var marital = $('#marital').val();
+var city = $('#city').val();
+var work_area = $('#work-area').val();
+var section = $('#section').val();
+var relatedFullName1 = $('#relatedFullName1').val();
+var relationDegree1 = $('#relationDegree1').val();
+var relatedPhone1 = $('#relatedPhone1').val();
+var relatedFullName2 = $('#relatedFullName2').val();
+var relationDegree2 = $('#relationDegree2').val();
+var relatedPhone2 = $('#relatedPhone2').val();
+var blood = $('#blood').val();
+var surgery = $('#surgery').val();
+var problems = $('#problems').val();
+var drug = $('#drug').val();
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        $.ajax
+            ({
+                type: "POST",
+                url: "t.php",
+                data: 
+                {
+                    first_name:first_name,
+                    last_name:last_name,
+                    dayy:dayy,
+                    monthh:monthh,
+                    yearr:yearr,
+                    your_address:your_address,
+                    nap:nap,
+                    phone:phone,
+                    your_email:your_email,
+                    gender:gender,
+                    marital:marital,
+                    city:city,
+                    work_area:work_area,
+                    section:section,
+                    relatedFullName1:relatedFullName1,
+                    relationDegree1:relationDegree1,
+                    relatedPhone1:relatedPhone1,
+                    relatedFullName2:relatedFullName2,
+                    relationDegree2:relationDegree2,
+                    relatedPhone2:relatedPhone2,
+                    blood:blood,
+                    surgery:surgery,
+                    problems:problems,
+                    drug:drug,
+                    pi:pi,
+                    idf:idf,
+                    idb:idb,
+                },
+                success: function(response)
+                { 
+                    if(response==1){
+                    alert("Thank you. Your information has been registered");
+                    window.open("/","_self");
+                    }
+                }
+            });
+        });
+                var currentTab = 0; // Current tab is set to be the first tab (0)
+                showTab(currentTab); // Display the current tab
+
+                function showTab(n) {
+                    // This function will display the specified tab of the form ...
+                    var x = document.getElementsByClassName("tab");
+                    x[n].style.display = "block";
+                    // ... and fix the Previous/Next buttons:
+                    if (n == 0) {
+                        document.getElementById("prevBtn").style.display = "none";
+                    } else {
+                        document.getElementById("prevBtn").style.display = "inline";
+                    }
+                    if (n == (x.length - 1)) {
+                        document.getElementById("nextBtn").style.display = "none";
+                        document.getElementById("submit").style.display = "inline";
+                    } else {
+                        document.getElementById("nextBtn").style.display = "inline";
+                        document.getElementById("submit").style.display = "none";
+                        document.getElementById("nextBtn").innerHTML = "Next";
+                        
+                    }
+                    // ... and run a function that displays the correct step indicator:
+                    fixStepIndicator(n)
+                }
+
+                function nextPrev(n) {
+                    // This function will figure out which tab to display
+                    var x = document.getElementsByClassName("tab");
+                    // Exit the function if any field in the current tab is invalid:
+                    if (n == 1 && !validateForm()) return false;
+                    // Hide the current tab:
+                    x[currentTab].style.display = "none";
+                    // Increase or decrease the current tab by 1:
+                    currentTab = currentTab + n;
+                    // if you have reached the end of the form... :
+                    if (currentTab >= x.length) {
+                        //...the form gets submitted:
+                        // document.getElementById("regForm").submit();
+                        return false;
+                    }
+                    // Otherwise, display the correct tab:
+                    showTab(currentTab);
+                }
+
+                function validateForm() {
+                    // This function deals with validation of the form fields
+                    var x, y, i, valid = true;
+                    x = document.getElementsByClassName("tab");
+                    y = x[currentTab].getElementsByTagName("input");
+                    var fieldsets = x[currentTab].getElementsByTagName("fieldset");
+                    // A loop that checks every input field in the current tab:
+                    for (i = 0; i < y.length; i++) {
+                        // If a field is empty...
+                        if (y[i].value == "") {
+                            // add an "invalid" class to the field:
+                            y[i].className += " invalid";
+                            fieldsets[i].style.borderColor = 'red';
+                            // and set the current valid status to false:
+                            valid = false;
+                        } else {
+                            fieldsets[i].style.borderColor = '';
+                        }
+                    }
+                    // If the valid status is true, mark the step as finished and valid:
+                    if (valid) {
+                        document.getElementsByClassName("step")[currentTab].className += " finish";
+                    }
+                    return valid; // return the valid status
+                }
+
+                function fixStepIndicator(n) {
+                    // This function removes the "active" class of all steps...
+                    var i, x = document.getElementsByClassName("step");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].className = x[i].className.replace(" active", "");
+                    }
+                    //... and adds the "active" class to the current step:
+                    x[n].className += " active";
+                    var i, x = document.getElementsByClassName("doar");
+                    for (i = 0; i < x.length; i++) {
+                        x[i]['aria-selected'] = 'true'; //.replace(" true", "");
+                    }
+                    x[n].className += " current";
+                    //... and adds the "active" class to the current step:
+                }
+                // var e =;
+                // var strUser = e.value;
+                // strUser
+                var inputAlign = document.getElementsByTagName("input");
+                var specialLabel = document.getElementsByTagName("special-label");
+                var stepsAlign = document.getElementsByClassName("steps");
+                var legnendAlign = document.getElementsByTagName("legned");
+
+
+                if (document.getElementById("language").value == "en") {
+                    for (var i = 0; i < inputAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        inputAlign[i].style.textAlign = "left";
+                    }
+                    for (var i = 0; i < specialLabel.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        specialLabel[i].style.textAlign = "left";
+                    }
+                    for (var i = 0; i < stepsAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        stepsAlign[i].style.float = "left";
+                    }
+                    for (var i = 0; i < legnendAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        legnendAlign[i].style.textAlign = "left";
+                    }
+                } else {
+                    for (var i = 0; i < inputAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        inputAlign[i].style.textAlign = "right";
+                    }
+                    for (var i = 0; i < specialLabel.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        specialLabel[i].style.textAlign = "right";
+                    }
+                    for (var i = 0; i < stepsAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        stepsAlign[i].style.float = "right";
+                    }
+                    for (var i = 0; i < legnendAlign.length; i += 1) {
+                        // iraq[i].style.display = 'none';
+                        legnendAlign[i].style.textAlign = "right";
+                    }
+                    // inputAlign.textAlign = "right";
+                    // specialLabel.style.textAlign = "right";
+                    // stepsAlign.style.float = "right";
+                    // legnendAlign.style.textAlign = "right";
+                }
+            </script>
+
+
+
+					</div>
+
+				
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+	<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; TelaDoc. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+
+</html>
